@@ -8,7 +8,7 @@ commands:
       - run: sudo apt install shellcheck -y
   shell-check:
     steps:
-      - run: bash bash-shellcheck.sh 
+      - run: bash support/bash/bash-shellcheck.sh 
 
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/configuration-reference/#jobs
