@@ -14,3 +14,7 @@ jobs:
     steps:
       - checkout
       - command: sudo apt install shellcheck
+workflows:
+  shell-check:
+    jobs: 
+      - shell-check
