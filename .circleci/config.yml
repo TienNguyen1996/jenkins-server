@@ -10,7 +10,7 @@ commands:
     steps:
       - run: chmod +x support/bash/bash-shellcheck.sh 
       - run: git diff --name-only $CIRCLE_SHA1  
-      - run: cat list
+
 
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/configuration-reference/#jobs
