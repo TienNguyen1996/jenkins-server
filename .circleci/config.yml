@@ -6,7 +6,9 @@ commands:
   install-shellcheck:
     steps:
       - run: sudo apt install shellcheck -y
-
+    shell-check:
+      - run: bash support/bash-listchangefile.sh
+      - run: bash bash-shellcheck.sh 
 
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/configuration-reference/#jobs
@@ -20,7 +22,7 @@ jobs:
     steps:
       - checkout
       - install-shellcheck
-      - run: shellcheck Container/init.sh
+      - run: shellcheck Container/init.sh listchangefile
 
 workflows:
   shell-check:
