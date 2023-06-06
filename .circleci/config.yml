@@ -6,7 +6,8 @@ commands:
   install-shellcheck:
     steps:
       - run: sudo apt install shellcheck -y
-    shell-check:
+  shell-check:
+    steps:
       - run: bash support/bash-listchangefile.sh
       - run: bash bash-shellcheck.sh 
 
@@ -22,7 +23,7 @@ jobs:
     steps:
       - checkout
       - install-shellcheck
-      - run: shellcheck Container/init.sh listchangefile
+      - shellcheck Container/init.sh listchangefile
 
 workflows:
   shell-check:
