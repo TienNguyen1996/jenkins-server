@@ -12,3 +12,5 @@ workflows:
     jobs: 
       - shellcheck/check:
           dir: ./support/bash
+          resource_class: small
+
