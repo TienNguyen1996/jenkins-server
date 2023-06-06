@@ -23,8 +23,7 @@ jobs:
     steps:
       - checkout
       - install-shellcheck
-      - shellcheck Container/init.sh listchangefile
-
+      - shellcheck 
 workflows:
   shell-check:
     jobs: 
