@@ -8,8 +8,8 @@ commands:
       - run: sudo apt install shellcheck -y
   shell-check:
     steps:
-      - run: git diff --name-only $CIRCLE_SHA1  
-
+      - run: PAGER=cat
+      - run: bash bash-shellcheck.sh 
 
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/configuration-reference/#jobs
@@ -25,7 +25,7 @@ jobs:
     steps:
       - checkout
       - install-shellcheck
-      - run: git diff --name-only $CIRCLE_SHA1  
+      - shell-check 
     
 workflows:
   shell-check:
