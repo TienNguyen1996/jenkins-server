@@ -13,7 +13,7 @@ jobs:
     executor: docker-executor
     steps:
       - checkout
-      - command: sudo apt install shellcheck
+      - run: sudo apt install shellcheck
 workflows:
   shell-check:
     jobs: 
