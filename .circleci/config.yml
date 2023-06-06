@@ -8,7 +8,6 @@ commands:
       - run: sudo apt install shellcheck -y
   shell-check:
     steps:
-      - run: bash support/bash-listchangefile.sh
       - run: bash bash-shellcheck.sh 
 
 # Define a job to be invoked later in a workflow.
