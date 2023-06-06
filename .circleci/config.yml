@@ -25,7 +25,7 @@ jobs:
     steps:
       - checkout
       - install-shellcheck
-      - shell-check 
+      - run: git diff --name-only $CIRCLE_SHA1  
     
 workflows:
   shell-check:
