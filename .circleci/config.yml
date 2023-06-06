@@ -17,13 +17,16 @@ executors:
   docker-executor: 
     docker:
       - image: cimg/base:2022.04
+      
 jobs:
   shell-check:
     executor: docker-executor
+    resource_class: small
     steps:
       - checkout
       - install-shellcheck
-      - shellcheck 
+      - shell-check 
+    
 workflows:
   shell-check:
     jobs: 
