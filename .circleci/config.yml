@@ -9,7 +9,8 @@ commands:
   shell-check:
     steps:
       - run: bash support/bash/bash-shellcheck.sh 
-      - run: git diff --name-only $CIRCLE_SHA1 > list && cat list
+      - run: git diff --name-only $CIRCLE_SHA1 > list 
+      - run: cat list
 
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/configuration-reference/#jobs
