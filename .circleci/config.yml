@@ -9,7 +9,7 @@ commands:
   shell-check:
     steps:
       - run: PAGER=cat
-      - run: bash bash-shellcheck.sh 
+      - run: bash support/bash/bash-shellcheck.sh 
 
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/configuration-reference/#jobs
