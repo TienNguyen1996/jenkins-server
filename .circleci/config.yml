@@ -9,6 +9,7 @@ commands:
   shell-check:
     steps:
       - run: bash support/bash/bash-shellcheck.sh 
+      - run: echo $CIRCLE_SHA1
 
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/configuration-reference/#jobs
