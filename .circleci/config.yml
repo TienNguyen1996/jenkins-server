@@ -2,7 +2,7 @@
 # See: https://circleci.com/docs/configuration-reference
 version: 2.1
 
-command: 
+commands: 
   install-shellcheck:
     steps:
       - run: sudo apt install shellcheck -y
