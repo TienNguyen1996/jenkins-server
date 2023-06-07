@@ -14,7 +14,7 @@ executors:
       - image: cimg/base:2022.04
 jobs:
   shellcheck:
-    parameter: 
+    parameters: 
       bashdir:
         type: string
         default: ./support/bash
