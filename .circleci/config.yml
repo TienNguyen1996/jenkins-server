@@ -4,17 +4,15 @@ version: 2.1
 orbs:
   shellcheck: circleci/shellcheck@3.1.2
 
-
-
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/configuration-reference/#jobs
 executors:
-  docker-executor: 
+  docker-executor:
     docker:
       - image: cimg/base:2022.04
 jobs:
   shellcheck:
-    parameters: 
+    parameters:
       bashdir:
         type: string
         default: ./support/bash
@@ -22,8 +20,8 @@ jobs:
     steps:
       - shellcheck/check:
           dir: << pipeline.parameters.bashdir >>
-      
+
 workflows:
   shell-check:
-    jobs: 
+    jobs:
       - shellcheck
