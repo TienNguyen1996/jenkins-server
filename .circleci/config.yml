@@ -7,12 +7,24 @@ orbs:
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/configuration-reference/#jobs
 executors:
-  docker-executor: 
+  docker-executor:
     docker:
       - image: cimg/base:2022.04
-      
+
+jobs:
+  shellcheck:
+    parameters:
+      bashdir:
+        type: string
+        default: .
+    executor: docker-executor
+    resource_class: small
+    steps:
+      - checkout          
+      - shellcheck/check:
+          dir: << parameters.bashdir >>
+
 workflows:
   shell-check:
-    jobs: 
-      - shellcheck/check:
-          dir: ./support/bash
+    jobs:
+      - shellcheck
