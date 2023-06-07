@@ -10,16 +10,16 @@ executors:
   docker-executor:
     docker:
       - image: cimg/base:2022.04
+
 jobs:
   shellcheck:
     parameters:
       bashdir:
         type: string
-        default: ./support/bash
+        default: ./support/bash/install-plugin.sh
     executor: docker-executor
     resource_class: small
     steps:
-      - run: ls
       - shellcheck/check:
           dir: << parameters.bashdir >>
 
