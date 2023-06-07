@@ -19,7 +19,7 @@ jobs:
     executor: docker-executor
     steps:
       - shellcheck/check:
-          dir: << pipeline.parameters.bashdir >>
+          dir: << parameters.bashdir >>
 
 workflows:
   shell-check:
