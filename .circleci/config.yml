@@ -19,6 +19,7 @@ jobs:
     executor: docker-executor
     resource_class: small
     steps:
+      - run: ls
       - shellcheck/check:
           dir: << parameters.bashdir >>
 
