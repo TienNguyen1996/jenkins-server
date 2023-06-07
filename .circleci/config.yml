@@ -15,8 +15,9 @@ jobs:
     parameters:
       bashdir:
         type: string
-        default: ./support/bash
+        default: support/bash
     executor: docker-executor
+    resource_class: small
     steps:
       - shellcheck/check:
           dir: << parameters.bashdir >>
