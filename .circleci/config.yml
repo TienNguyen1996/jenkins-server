@@ -16,7 +16,7 @@ jobs:
     parameters:
       bashdir:
         type: string
-        default: .
+        default: ../
     executor: docker-executor
     resource_class: small
     steps:
